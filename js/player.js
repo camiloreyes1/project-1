@@ -11,7 +11,7 @@ class Player {
       this.element = document.createElement("img");
   
       this.element.src = imgSrc;
-      this.element.style.position = "relative";
+      this.element.style.position = "absolute";
 
       this.element.style.width = `${this.width}px`;
       this.element.style.height = `${this.height}px`;
