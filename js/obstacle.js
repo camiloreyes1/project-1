@@ -5,7 +5,7 @@ class Obstacle {
         this.left = left;
         this.top = top;
         this.width = 100;
-        this.height = 120;
+        this.height = 100;
         this.directionX = directionX;
         this.element = document.createElement("img");
 

@@ -64,6 +64,36 @@ class Game{
         this.lane1[i].move()
       }
 
+      for (let i = 0; i < this.lane2.length; i++) {
+        
+        if (this.lane2[i].left + this.lane2[i].width > 650){
+          this.lane2[i].element.remove();
+          this.lane2.splice(i, 1)
+        }
+        this.lane2[i].move()
+      }
+
+      for (let i = 0; i < this.lane3.length; i++) {
+      
+        if (this.lane3[i].left + this.lane3[i].width > 650){
+          this.lane3[i].element.remove();
+          this.lane3.splice(i, 1)
+        }
+        this.lane3[i].move()
+      }
+
+      for (let i = 0; i < this.lane4.length; i++) {
+      
+        if (this.lane4[i].left + this.lane4[i].width > 650){
+          this.lane4[i].element.remove();
+          this.lane4.splice(i, 1)
+        }
+        this.lane4[i].move()
+      }
+      
+      
+
+      
     }
     
     }

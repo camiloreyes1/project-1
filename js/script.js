@@ -42,11 +42,23 @@ window.onload = function () {
           game.player.top += 2.7
         }
 
-      })
+      });
 
       lane1Interval = setInterval(() => {
         game.lane1.push(new Obstacle(game.gameScreen, 0, 230, "./images/cop-car.png", 3))
-      }, 2500)
+      }, 2500);
+
+      lane2Interval = setInterval(() => {
+        game.lane2.push(new Obstacle(game.gameScreen, 520, 340, "./images/sports-car.png", -3))
+      }, 3500);
+
+      lane3Interval = setInterval(() => {
+        game.lane3.push(new Obstacle(game.gameScreen, 0, 480, "./images/truck.png", 3))
+      }, 4000);
+
+      lane4Interval = setInterval(() => {
+        game.lane4.push(new Obstacle(game.gameScreen, 520, 610, "./images/school-bus.png", -3))
+      }, 1800);
 
         }
 
