@@ -90,11 +90,11 @@ class Game{
         }
         this.lane4[i].move()
       }
-      
-      
 
       
-    }
+
+    
+      }
     
     }
 
