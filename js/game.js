@@ -11,18 +11,19 @@ class Game{
             50,
             50,
             "./images/chic.png"
+
         );
+
         this.height = 840
         this.width = 650
         this.obstacles = []
-        this.score = 0
-        this.lives = 3
         this.gameIsOver = false
 
         this.lane1 = [];
         this.lane2 = [];
         this.lane3 = [];
         this.lane4 = []; 
+        this.lane5 = []
 
 
 }
@@ -40,10 +41,6 @@ class Game{
 
     gameLoop() {
 
-          if (this.gameIsOver) {
-          return;
-        }
-    
         this.update();
     
         window.requestAnimationFrame(() => this.gameLoop());
@@ -53,18 +50,22 @@ class Game{
     
       this.player.move();
 
-      console.log(this.lane1)
-
       for (let i = 0; i < this.lane1.length; i++) {
-        
+
+         (this.player.crashed(this.lane1[i]))
+
         if (this.lane1[i].left + this.lane1[i].width > 650){
           this.lane1[i].element.remove();
           this.lane1.splice(i, 1)
         }
         this.lane1[i].move()
+        
       }
 
       for (let i = 0; i < this.lane2.length; i++) {
+
+        this.player.crashed(this.lane2[i])
+
         
         if (this.lane2[i].left + this.lane2[i].width > 650){
           this.lane2[i].element.remove();
@@ -74,7 +75,10 @@ class Game{
       }
 
       for (let i = 0; i < this.lane3.length; i++) {
-      
+
+        this.player.crashed(this.lane3[i])
+        
+        
         if (this.lane3[i].left + this.lane3[i].width > 650){
           this.lane3[i].element.remove();
           this.lane3.splice(i, 1)
@@ -84,6 +88,8 @@ class Game{
 
       for (let i = 0; i < this.lane4.length; i++) {
       
+        this.player.crashed(this.lane4[i])
+        
         if (this.lane4[i].left + this.lane4[i].width > 650){
           this.lane4[i].element.remove();
           this.lane4.splice(i, 1)
@@ -91,10 +97,15 @@ class Game{
         this.lane4[i].move()
       }
 
-      
 
-    
+      if (this.player.gameIsOver()) {
+
+        alert("GAME OVER - THE CHICKEN COULDN'T CROSS THE ROAD :(");
+          
       }
+   
+    }
+   
     
     }
 

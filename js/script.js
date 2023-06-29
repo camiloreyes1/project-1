@@ -8,6 +8,7 @@ window.onload = function () {
     let lane2Interval;
     let lane3Interval;
     let lane4Interval;
+    let lane5Interval;
 
     startButton.addEventListener("click", function () {
       startGame();
@@ -49,8 +50,8 @@ window.onload = function () {
       }, 2500);
 
       lane2Interval = setInterval(() => {
-        game.lane2.push(new Obstacle(game.gameScreen, 550, 340, "./images/sports-car.png", -3))
-      }, 3500);
+        game.lane2.push(new Obstacle(game.gameScreen, 550, 340, "./images/blue-car.png", -3))
+      }, 2000);
 
       lane3Interval = setInterval(() => {
         game.lane3.push(new Obstacle(game.gameScreen, 0, 480, "./images/truck.png", 3))
@@ -58,9 +59,9 @@ window.onload = function () {
 
       lane4Interval = setInterval(() => {
         game.lane4.push(new Obstacle(game.gameScreen, 550, 610, "./images/school-bus.png", -3))
-      }, 5000);
-
-        }
+      }, 3000);
+              
+      }
 
  
   };

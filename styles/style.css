@@ -6,24 +6,16 @@ body {
 }
 
 #home-screen{
-  justify-content: center;
-  background-image: url(../images/sky-bg.gif);
-  background-repeat: repeat-x;
+  background: url(../images/sky-bg.gif) no-repeat center center fixed;
+  background-size: cover;
 }
 
-#game-stats {
-  padding: 0px 0px;
-  justify-content: center;
-}
-  
+
 #game-screen {
-    /* position: absolute; */
-    display: center;
-    align-content: center;
+    overflow-x: hidden;
     background-image: url(../images/road.png);
-    background-repeat: no-repeat;
     background-size: 100%;
-
+    
 }
   
   @keyframes slide {
@@ -59,7 +51,7 @@ body button {
     color: #fff;
     padding: 20px 40px;
     border-radius: 18px;
-    margin-bottom: 90px;
+    margin-bottom: 160px;
     
   }
 

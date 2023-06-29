@@ -9,6 +9,8 @@ class Player {
       this.directionX = 0;
       this.directionY = 0;
       this.element = document.createElement("img");
+      this.lives = 3
+
   
       this.element.src = imgSrc;
       this.element.style.position = "absolute";
@@ -49,19 +51,39 @@ class Player {
 
     crashed(obstacle) {
 
-      const playerRect = this.element.getBoundingClientRect();
-      const obstacleRect = obstacle.element.getBoundingClientRect();
-      
       if (
-        playerRect.left < obstacleRect.right &&
-        playerRect.right > obstacleRect.left &&
-        playerRect.top < obstacleRect.bottom &&
-        playerRect.bottom > obstacleRect.top
+        this.left < obstacle.left + obstacle.width &&
+        this.left + this.width > obstacle.left &&
+        this.top < obstacle.top + obstacle.height / 2 &&
+        this.height / 4  + this.top > obstacle.top 
       ) {
-        return true;
-      } else {
-        return false;
+
+        this.lives --;
+        this.left = 50;
+        this.top = 50;
+        console.log(this.lives)
+
+        
+      }
+  }
+
+    gameIsOver () {
+      if (this.lives === 0) {
+        return true
+      } else  {
+        return false 
+      }
+      }
+
+     winGame(finishLine) {
+
+      if (
+        this.left < finishLine.left + finishLine.width &&
+        this.left + this.width > finishLine.left &&
+        this.top < finishLine.top + finishLine.height  &&
+        this.height + this.top > obstacle.top 
+      ) {
+          console.log("YOU WIN !!!")
       }
     }
-  
-  }
+}
