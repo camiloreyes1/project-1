@@ -15,10 +15,8 @@ audio {
 }
 
 #game-screen {
-    overflow-x: hidden;
     background-image: url(../images/road.png);
     background-size: 100%;
-    
 }
   
   @keyframes slide {
@@ -37,6 +35,8 @@ h2{
   
   }
 
+
+
   .title-img {
     padding-top: 60px;
     padding-bottom: 110px;
@@ -48,13 +48,14 @@ h2{
     justify-content: center;
 }
 
+
 body button {
     font-size: 20px;
     background-color:rgba(255, 0, 0, 0.817);
     color: #fff;
     padding: 20px 40px;
     border-radius: 18px;
-    margin-bottom: 160px;
+    margin-bottom: 192px;
     
   }
 

@@ -4,6 +4,7 @@ class Game{
 
         this.homeScreen = document.getElementById("home-screen");
         this.gameScreen = document.getElementById("game-screen");
+
         this.player = new Player(
             this.gameScreen,
             90,
@@ -15,7 +16,7 @@ class Game{
 
             this.flag = new FinishLine (
             this.gameScreen,
-            225,
+            220,
             790,
             280,
             90,
