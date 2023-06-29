@@ -1,6 +1,5 @@
 window.onload = function () {
     const startButton = document.getElementById("start-button");
-    const restartButton = document.getElementById("restart-button");
 
     let game; 
 
@@ -8,8 +7,7 @@ window.onload = function () {
     let lane2Interval;
     let lane3Interval;
     let lane4Interval;
-    let lane5Interval;
-
+    
     startButton.addEventListener("click", function () {
       startGame();
     });
@@ -40,7 +38,7 @@ window.onload = function () {
         if (e.key === "ArrowDown") {
           console.log("d")
 
-          game.player.top += 3.2
+          game.player.top += 3.5
         }
 
       });
@@ -59,7 +57,9 @@ window.onload = function () {
 
       lane4Interval = setInterval(() => {
         game.lane4.push(new Obstacle(game.gameScreen, 550, 610, "./images/school-bus.png", -3))
-      }, 3000);
+      }, 1800);
+
+   
               
       }
 

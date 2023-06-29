@@ -12,12 +12,17 @@
 </head>
 <body>
 
+
      <main>
+        <audio src="./music/game-music.mp3"  autoplay="true"></audio>
+
          
          <div id="home-screen">
              <img src="./images/title-logo.png" alt="" class="title-img" />
              <h1>Why did the chicken cross the road?</h1>
-             <h2><span>Stats <br> Lives: 3 <br></span></h2>
+             <h3>Use arrow keys to move the chicken</h3>
+             <h2>Lives: <span id="lives">3</span></h2>
+
         </br>
         <button id="start-button">START</button>
         
@@ -27,12 +32,14 @@
 </br>   
 
 <div id="game-screen">
+    <!-- <img src="./images/finish-line.png" alt="" class="finish-line" /> -->
 </div>
 
 
     </main>
 
     <script type="text/javascript" src="js/obstacle.js"></script> 
+    <script type="text/javascript" src="js/finishLine.js"></script> 
     <script type="text/javascript" src="js/player.js"></script> 
     <script type="text/javascript" src="js/game.js"></script> 
     <script type="text/javascript" src="js/script.js"></script> 

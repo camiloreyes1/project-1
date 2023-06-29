@@ -6,14 +6,22 @@ class Game{
         this.gameScreen = document.getElementById("game-screen");
         this.player = new Player(
             this.gameScreen,
-            50,
-            50,
+            90,
+            90,
             50,
             50,
             "./images/chic.png"
+            );
 
-        );
-
+            this.flag = new FinishLine (
+            this.gameScreen,
+            225,
+            790,
+            280,
+            90,
+            "./images/finish-line.png"
+            );
+       
         this.height = 840
         this.width = 650
         this.obstacles = []
@@ -23,7 +31,7 @@ class Game{
         this.lane2 = [];
         this.lane3 = [];
         this.lane4 = []; 
-        this.lane5 = []
+        this.lane5 = [];
 
 
 }
@@ -97,11 +105,13 @@ class Game{
         this.lane4[i].move()
       }
 
-
+      this.player.winGame(this.flag)
+    
       if (this.player.gameIsOver()) {
 
-        alert("GAME OVER - THE CHICKEN COULDN'T CROSS THE ROAD :(");
-          
+        window.alert("GAME OVER - THE CHICKEN COULDN'T CROSS THE ROAD :(");
+        location.reload();
+
       }
    
     }

@@ -10,7 +10,6 @@ class Player {
       this.directionY = 0;
       this.element = document.createElement("img");
       this.lives = 3
-
   
       this.element.src = imgSrc;
       this.element.style.position = "absolute";
@@ -59,13 +58,24 @@ class Player {
       ) {
 
         this.lives --;
-        this.left = 50;
-        this.top = 50;
-        console.log(this.lives)
-
-        
+        this.left = 90;
+        this.top = 90;
+        window.alert(`You have ${this.lives} lives left!`)
+       
       }
   }
+
+    winGame(finishLine) {
+    
+    if (
+      this.left < finishLine.left + finishLine.width &&
+      this.left + this.width > finishLine.left &&
+      this.top < finishLine.top + finishLine.height / 2  &&
+      this.height / 2 + this.top > finishLine.top 
+      ) {
+        window.alert("Why did the chicken cross the road? ...To bock traffic!!!")
+      }
+    }
 
     gameIsOver () {
       if (this.lives === 0) {
@@ -74,16 +84,4 @@ class Player {
         return false 
       }
       }
-
-     winGame(finishLine) {
-
-      if (
-        this.left < finishLine.left + finishLine.width &&
-        this.left + this.width > finishLine.left &&
-        this.top < finishLine.top + finishLine.height  &&
-        this.height + this.top > obstacle.top 
-      ) {
-          console.log("YOU WIN !!!")
-      }
-    }
 }
